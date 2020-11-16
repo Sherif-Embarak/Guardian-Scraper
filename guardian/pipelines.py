@@ -32,7 +32,7 @@ class MongoPipeline:
 
     def process_item(self, item, spider):
         collection = self.db[self.collection_name]
-        if collection.count_documents({"response": item['response']}) == 0:
+        if collection.count_documents({"article_url": item['article_url']}) == 0:
             try:
                 collection.insert(dict(item))
             except pymongo.errors.DuplicateKeyError:

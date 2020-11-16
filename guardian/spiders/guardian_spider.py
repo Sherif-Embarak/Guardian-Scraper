@@ -72,7 +72,7 @@ class Guardian_Spider(scrapy.Spider):
         item['category'] = response.meta["category"]
         item['subcat_name'] = response.meta["subcat_name"]
         item['page_name'] = response.meta["page_name"]
-        item['response'] = response.request.url
+        item['article_url'] = response.request.url
         item['article_writer'] = article_writer
         item['article_time'] = article_time
         item['article_title'] = article_title

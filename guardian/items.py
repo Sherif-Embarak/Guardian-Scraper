@@ -9,7 +9,7 @@ from scrapy import Field, Item
 
 class GuardianItem(Item):
     category = Field()
-    response = Field()
+    article_url = Field()
     page_name = Field()
     subcat_name = Field()
     article_writer = Field()
