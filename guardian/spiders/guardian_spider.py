@@ -59,9 +59,9 @@ class Guardian_Spider(scrapy.Spider):
     # Forth, Parsing article, title and writer
     def article_parse(self, response):
         item = GuardianItem()
-        article_div = response.xpath('//div[contains(@class,"content__main-column")]')
-        article_txt = article_div.css('p *::text').extract()
-        article_caption = response.xpath('//*[contains(@class,"caption")]//text()').extract()
+        article_txt = response.xpath('//div[contains(@itemprop,"articleBody")]//text()').extract()
+        #article_txt = article_div.css('p *::text').extract()
+        article_caption = response.xpath('//*[contains(@class,"caption--main")]//text()').extract()
         article_title = response.xpath('//h1[contains(@class,"headline")]//text()').extract_first()
         article_writer = response.xpath('//span[contains(@itemprop,"name")]//text()').extract_first()
         article_time = response.xpath('//time[contains(@class,"dateline")]/@datetime').extract_first()
@@ -85,7 +85,7 @@ class Guardian_Spider(scrapy.Spider):
             txt = [t.strip() for t in txt]
         elif (join == 1):
             txt = [t.strip() for t in txt]
-            txt = ' '.join(txt)
+            txt = ' '.join(txt).strip()
         else:
             txt = txt.strip()
         return txt
