@@ -1,6 +1,6 @@
 ### Guardian-Scraper
 ##### 1- download the repo
-##### 2- download and install  python3.6
+##### 2- download and install  python, pip install virtualenv
 ##### 3- open cmd and cd to "/path/to/downloaded/repo/"
 ###### example: cd C:\Users\<user>\OneDrive\Documents\Guardian-Scraper
 ##### 4- virtualenv -p "/path/to/installed/python.exe"  venv
