@@ -9,4 +9,4 @@
 ##### 6- activate
 ##### 7- cd to "/path/to/downloaded/repo/"
 ##### 8- pip install -r requirements.txt
-##### 8- scrapy crawl guardian
+##### 8- _scrapy crawl guardian_

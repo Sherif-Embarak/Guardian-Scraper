@@ -9,7 +9,7 @@ class Guardian_Spider(scrapy.Spider):
 
     # start_requests method
     def start_requests(self):
-        yield scrapy.Request(url=self.start_urls, callback=self.parse_front)
+        yield scrapy.Request(url=self.start_urls, callback=self.parse_front, dont_filter = True)
 
     # First, Parsing main page categories
     def parse_front(self, response):
@@ -18,21 +18,24 @@ class Guardian_Spider(scrapy.Spider):
         categories_name = self.clean_text(categories.css('a::text').extract(), join=0)
         cnt = 0
         for url, category in zip(categories_links, categories_name):
-            if cnt > 2:
-                break
-            cnt = cnt + 1
-            yield response.follow(url=url,
-                                  meta={"category": category},
-                                  callback=self.parse_subcat)
+            if category == "News":
+                print(str(url) +" "+str(category))
+                if cnt > 2:
+                    break
+                #cnt = cnt + 1
+                yield response.follow(url=url,
+                                      meta={"category": category},
+                                      callback=self.parse_subcat)
 
     # Second, Parsing sub-categories
     def parse_subcat(self, response):
+        print(response.meta["category"])
         subcat_links = response.xpath('//li[contains(@class,"subnav__item")]')
         cnt = 0
         for url in subcat_links:
             if cnt > 2:
                 break
-            cnt = cnt + 1
+            #cnt = cnt + 1
             subcat_name = self.clean_text(url.css('a::text').extract_first(), 2)
             subcat_link = url.css('a::attr(href)').extract_first()
             yield response.follow(url=subcat_link,
@@ -46,7 +49,7 @@ class Guardian_Spider(scrapy.Spider):
         for page in pages:
             if cnt > 2:
                 break
-            cnt = cnt + 1
+            #cnt = cnt + 1
             pages_name = self.clean_text(page.css('a *::text').extract(), 1)
             pages_link = page.css('a::attr(href)').extract_first()
             yield response.follow(url=pages_link,
