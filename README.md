@@ -1,4 +1,5 @@
 ### Guardian-Scraper
+###### This is a Scrpy project to crawl https://www.theguardian.com/international
 ##### 1- download the repo
 ##### 2- download and install  python, pip install virtualenv
 ##### 3- open cmd and cd to "/path/to/downloaded/repo/"
