@@ -2,7 +2,7 @@
 ###### This is a Scrpy project to crawl https://www.theguardian.com/international and save it in MongoDB
 ### Installation
 ##### 1- download the repo
-##### 2- download and install  python3.6, pip install virtualenv
+##### 2- download and install  python3.6, pip install virtualenv, (Mongodb shell for local, Mongo Atlas for Cloud)
 ##### 3- open cmd and cd to "/path/to/downloaded/repo/"
 ```
 example: $ cd C:\Users\<user>\OneDrive\Documents\Guardian-Scraper
