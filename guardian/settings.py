@@ -68,20 +68,10 @@ ROBOTSTXT_OBEY = True
 ITEM_PIPELINES = {
     'guardian.pipelines.MongoPipeline': 300,
 }
-MONGO_URI = 'mongodb://localhost:27017/guardian'
-#MONGO_URI = 'mongodb://admin:admin@cluster0-shard-00-00.ka0wm.mongodb.net:27017/guardian?ssl=true&replicaSet=atlas-13yas1-shard-0&authSource=admin&retryWrites=true&w=majority'
+#MONGO_URI = 'mongodb://localhost:27017/'
+MONGO_URI = 'mongodb://admin:admin@cluster0-shard-00-00.ka0wm.mongodb.net:27017/?ssl=true&replicaSet=atlas-13yas1-shard-0&authSource=admin&retryWrites=true&w=majority'
 MONGO_DATABASE = 'guardian'
 
-FIELDS = [
-    'article_url',
-    'article_txt',
-    'article_title',
-    'article_writer',
-    'article_caption',
-    'article_time',
-    'category',
-     'subcat_name',
-      'page_name']
 
 #DOWNLOAD_DELAY = .25
 RANDOMIZE_DOWNLOAD_DELAY = True

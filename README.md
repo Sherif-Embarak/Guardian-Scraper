@@ -1,5 +1,6 @@
-### Guardian-Scraper
+## Guardian scraper and API
 ###### This is a Scrpy project to crawl https://www.theguardian.com/international and save it in MongoDB
+### Installation
 ##### 1- download the repo
 ##### 2- download and install  python3.6, pip install virtualenv
 ##### 3- open cmd and cd to "/path/to/downloaded/repo/"
@@ -18,7 +19,15 @@ venv\scripts\activate
 ```
 pip install -r requirements.txt
 ```
-##### 7- run scrpy
+
+### Run Guardian-Scraper
 ```
 scrapy crawl guardian
 ```
+
+### Run Guardian-API
+```
+flask run
+```
+
+
