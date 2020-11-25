@@ -40,5 +40,9 @@ http://127.0.0.1:5000/article?query=accept&return_list=article_txt,article_write
 ```python
 fields= ['article_url', 'article_txt', 'article_title', 'article_writer', 'article_caption', 'article_time','category', 'subcategory_name', 'page_name']
 ```
-
-
+####  Change Mongo from Local from/to Atlas:
+###### change MONGO_URI in settings.py
+```python
+#MONGO_URI = 'mongodb://localhost:27017/'
+MONGO_URI = 'mongodb://admin:admin@cluster0-shard-00-00.ka0wm.mongodb.net:27017/?ssl=true&replicaSet=atlas-13yas1-shard-0&authSource=admin&retryWrites=true&w=majority'
+```

@@ -68,8 +68,8 @@ ROBOTSTXT_OBEY = True
 ITEM_PIPELINES = {
     'guardian.pipelines.MongoPipeline': 300,
 }
-MONGO_URI = 'mongodb://localhost:27017/'
-#MONGO_URI = 'mongodb://admin:admin@cluster0-shard-00-00.ka0wm.mongodb.net:27017/?ssl=true&replicaSet=atlas-13yas1-shard-0&authSource=admin&retryWrites=true&w=majority'
+#MONGO_URI = 'mongodb://localhost:27017/'
+MONGO_URI = 'mongodb://admin:admin@cluster0-shard-00-00.ka0wm.mongodb.net:27017/?ssl=true&replicaSet=atlas-13yas1-shard-0&authSource=admin&retryWrites=true&w=majority'
 MONGO_DATABASE = 'guardian'
 
 
