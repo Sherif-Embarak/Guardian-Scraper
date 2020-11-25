@@ -40,7 +40,7 @@ http://127.0.0.1:5000/article?query=accept&return_list=article_txt,article_write
 ```python
 fields= ['article_url', 'article_txt', 'article_title', 'article_writer', 'article_caption', 'article_time','category', 'subcategory_name', 'page_name']
 ```
-####  Change Mongo from Local from/to Atlas:
+####  Change Mongo Local from/to Atlas:
 ###### change MONGO_URI in settings.py
 ```python
 #MONGO_URI = 'mongodb://localhost:27017/'
