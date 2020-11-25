@@ -11,7 +11,7 @@ class GuardianItem(Item):
     category = Field()
     article_url = Field()
     page_name = Field()
-    subcat_name = Field()
+    subcategory_name = Field()
     article_writer = Field()
     article_time = Field()
     article_title = Field()
