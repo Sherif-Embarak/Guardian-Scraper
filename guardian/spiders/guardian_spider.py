@@ -22,7 +22,7 @@ class Guardian_Spider(scrapy.Spider):
     def start_requests(self):
         yield scrapy.Request(url=self.start_urls, callback=self.parse_front, dont_filter=True)
 
-    # First, Parsing main page categories
+    # First, Parsing main page categories["News", "Opinion", "Sport", ...]
     def parse_front(self, response):
         categories = response.xpath('//li[contains(@class,"pillars__item")]')
         categories_links = categories.xpath('./a/@href').extract()
@@ -32,7 +32,7 @@ class Guardian_Spider(scrapy.Spider):
                                   meta={"category": category},
                                   callback=self.parse_subcategory)
 
-    # Second, Parsing sub-categories
+    # Second, Parsing subcategories ["News" : ['Covid, UK, World'], "Opinion" : ['Cartoon','Letter'], ...]
     def parse_subcategory(self, response):
         subcategory_links = response.xpath('//li[contains(@class,"subnav__item")]')
         for url in subcategory_links:

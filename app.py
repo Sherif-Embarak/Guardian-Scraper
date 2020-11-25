@@ -11,7 +11,7 @@ last_bs_pos = MONGO_URI.rfind('/') + 1
 MONGO_DB_URI = MONGO_URI[:last_bs_pos] + MONGO_DATABASE + MONGO_URI[last_bs_pos:]
 guardian_api.config["MONGO_URI"] = MONGO_DB_URI
 mongo = PyMongo(guardian_api)
-# get model fields
+# get model fields['article_url', 'article_txt', 'article_title', ...]
 FIELDS = list(GuardianItem.__dict__['fields'].keys())
 
 

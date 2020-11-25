@@ -44,5 +44,6 @@ fields= ['article_url', 'article_txt', 'article_title', 'article_writer', 'artic
 ###### change MONGO_URI in settings.py
 ```python
 #MONGO_URI = 'mongodb://localhost:27017/'
-MONGO_URI = 'mongodb://admin:admin@cluster0-shard-00-00.ka0wm.mongodb.net:27017/?ssl=true&replicaSet=atlas-13yas1-shard-0&authSource=admin&retryWrites=true&w=majority'
+MONGO_URI = 'mongodb://<user>:<password>@<cluster>.mongodb.net:27017/?ssl=true&replicaSet=atlas-13yas1-shard-0&authSource=admin&retryWrites=true&w=majority'
 ```
+you can contact me "sherif.embarak@gmail.com" to send you Mongodb Atlas URI(for test)
